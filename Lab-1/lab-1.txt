@@ -1,0 +1,106 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\elekt> docker run -d -p 80:80 ellerbrock/alpine-bash-git
+581f1949b70ad8dbdba7faa9803d5e220fae0a6fcfb08411cc06e567e9cbe56d
+PS C:\Users\elekt> docker run --hostname=581f1949b70a --user=download --env=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin --env=SERVICE_USER=download --env=SERVICE_HOME=/home/download --volume=/home/download --workdir=/home/download -p 80:80 --restart=no --label='com.frapsoft.maintainer=Maik Ellerbrock' --label='com.frapsoft.version=0.2.0' --runtime=runc -d ellerbrock/alpine-bash-git
+280b5de426415f969a44a41d24d48b1866bfa014d95eb6a2e21871376818a4d7
+PS C:\Users\elekt> docker run -it hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+PS C:\Users\elekt> docker run -it ubuntu bash
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+2ab09b027e7f: Pull complete
+Digest: sha256:67211c14fa74f070d27cc59d69a7fa9aeff8e28ea118ef3babc295a0428a6d21
+Status: Downloaded newer image for ubuntu:latest
+root@80f96239784e:/# apr update
+bash: apr: command not found
+root@80f96239784e:/# apt update
+Get:1 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
+Get:2 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
+Get:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [107 kB]
+Get:5 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
+Get:6 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [869 kB]
+Get:7 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1792 kB]
+Get:8 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
+Get:9 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+Get:10 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [829 kB]
+Get:11 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [23.2 kB]
+Get:12 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [905 kB]
+Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [885 kB]
+Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [28.6 kB]
+Get:15 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [1199 kB]
+Get:16 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1142 kB]
+Get:17 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [22.4 kB]
+Get:18 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [49.0 kB]
+Fetched 26.3 MB in 16s (1617 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+All packages are up to date.
+root@80f96239784e:/# git --version
+bash: git: command not found
+root@80f96239784e:/# sudo apt install git
+bash: sudo: command not found
+root@80f96239784e:/# apt install git
+Reading package lists... Done
+
+...installing git...
+
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+root@80f96239784e:/# git --version
+git version 2.34.1
+root@80f96239784e:/# whoami
+root
+root@80f96239784e:/# ls
+bin  boot  dev  etc  home  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@80f96239784e:/# git clone https://github.com/tyshchuk-ak18/Docker-Labs.git
+Cloning into 'Docker-Labs'...
+Username for 'https://github.com': tyshchuk_ak18
+Password for 'https://tyshchuk_ak18@github.com':
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/tyshchuk-ak18/Docker-Labs.git/'
+root@80f96239784e:/# git clone https://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@github.com/tyshchuk-ak18/Docker-Labs.gitCloning into 'Docker-Labs'...
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 7 (delta 0), reused 7 (delta 0), pack-reused 0
+Receiving objects: 100% (7/7), done.
+root@80f96239784e:/# ls
+Docker-Labs  boot  etc   lib    lib64   media  opt   root  sbin  sys  usr
+bin          dev   home  lib32  libx32  mnt    proc  run   srv   tmp  var
+root@80f96239784e:/# ^C
+root@80f96239784e:/#
+exit
+PS C:\Users\elekt> docker run -it ubuntu bash
+root@dd69ac01509b:/# ls
+bin  boot  dev  etc  home  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@dd69ac01509b:/#
