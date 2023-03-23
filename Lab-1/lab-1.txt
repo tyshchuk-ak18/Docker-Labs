@@ -88,7 +88,7 @@ Password for 'https://tyshchuk_ak18@github.com':
 remote: Support for password authentication was removed on August 13, 2021.
 remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
 fatal: Authentication failed for 'https://github.com/tyshchuk-ak18/Docker-Labs.git/'
-root@80f96239784e:/# git clone https://secret-key@github.com/tyshchuk-ak18/Docker-Labs.gitCloning into 'Docker-Labs'...
+root@80f96239784e:/# git clone https://github.com/tyshchuk-ak18/Docker-Labs.gitCloning into 'Docker-Labs'...
 remote: Enumerating objects: 7, done.
 remote: Counting objects: 100% (7/7), done.
 remote: Compressing objects: 100% (4/4), done.
