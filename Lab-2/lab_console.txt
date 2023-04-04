@@ -1,0 +1,135 @@
+PS D:\elekt\Documents\Docker-Labs\Lab-2> docker build -t 'myapp'
+"docker build" requires exactly 1 argument.
+See 'docker build --help'.
+
+Usage:  docker build [OPTIONS] PATH | URL | -
+
+Build an image from a Dockerfile
+PS D:\elekt\Documents\Docker-Labs\Lab-2> docker build -t myapp
+"docker build" requires exactly 1 argument.
+See 'docker build --help'.
+
+Usage:  docker build [OPTIONS] PATH | URL | -
+
+Build an image from a Dockerfile
+[+] Building 49.9s (8/8) FINISHED
+ => [internal] load build definition from Dockerfile                                                               0.3s
+ => => transferring dockerfile: 124B                                                                               0.3s
+ => [internal] load .dockerignore                                                                                  0.3s
+ => => transferring context: 2B                                                                                    0.3s
+ => [internal] load metadata for docker.io/library/python:3                                                        2.5s
+ => [internal] load build context                                                                                  0.1s
+ => => transferring context: 57B                                                                                   0.0s
+ => [1/3] FROM docker.io/library/python:3@sha256:5329e75033c4446dc92d702cf8ebbeb63e549d9b83076a776f6753e10817fc3  40.5s
+ => => resolve docker.io/library/python:3@sha256:5329e75033c4446dc92d702cf8ebbeb63e549d9b83076a776f6753e10817fc3c  0.0s
+ => => sha256:df3e9d105d6c5f8aa4410ba84b570db5f9fefbf14020b70fb63c8e7c32e51fb0 7.90kB / 7.90kB                     0.0s
+ => => sha256:68a71c865a2c34678c6dea55e4b0928f751ee3c0ca91cace6e4e0578c534d6cf 5.17MB / 5.17MB                     1.6s
+ => => sha256:670730c27c2eacf07897a6e94fe55423ea50b884d9c28161a283bbbf064d1124 10.88MB / 10.88MB                   3.2s
+ => => sha256:5329e75033c4446dc92d702cf8ebbeb63e549d9b83076a776f6753e10817fc3c 2.14kB / 2.14kB                     0.0s
+ => => sha256:aa25de88a84b4c966ce581bda763553da7a093a06315adec8830c3d39b832196 2.22kB / 2.22kB                     0.0s
+ => => sha256:3e440a7045683e27f8e2fa04000e0e078d8dfac0c971358ae0f8c65c13321c8e 55.05MB / 55.05MB                  14.2s
+ => => sha256:5a7a2c95f0f8b221d776ccf35911b68eec2cf9414a44d216205a6f03e381d3d7 54.58MB / 54.58MB                  14.9s
+ => => sha256:6d627e120214bb28a729d4b54a0ecba4c4aeaf0295ca2d1f129480145fad2af6 196.81MB / 196.81MB                34.6s
+ => => sha256:f8c6dc6780819f5eb5a6ee84ce72dd613d5e6c406585211a064b6ef641c8a09a 6.29MB / 6.29MB                    16.3s
+ => => extracting sha256:3e440a7045683e27f8e2fa04000e0e078d8dfac0c971358ae0f8c65c13321c8e                          1.5s
+ => => sha256:48bd2de548fc487bbcf51e8ae99969d4ac77e412c4fcec68bc529bca2ad304b3 20.05MB / 20.05MB                  19.1s
+ => => extracting sha256:68a71c865a2c34678c6dea55e4b0928f751ee3c0ca91cace6e4e0578c534d6cf                          0.2s
+ => => extracting sha256:670730c27c2eacf07897a6e94fe55423ea50b884d9c28161a283bbbf064d1124                          0.2s
+ => => sha256:e69bcee2d3143195eac279932a0692697b7e3905bed8c737f1cc7f237899ea05 244B / 244B                        16.5s
+ => => extracting sha256:5a7a2c95f0f8b221d776ccf35911b68eec2cf9414a44d216205a6f03e381d3d7                          1.8s
+ => => sha256:284a2f2376093ba00b09f539e56047dc168703a78095640a178b8e0c5450f460 3.08MB / 3.08MB                    17.5s
+ => => extracting sha256:6d627e120214bb28a729d4b54a0ecba4c4aeaf0295ca2d1f129480145fad2af6                          4.5s
+ => => extracting sha256:f8c6dc6780819f5eb5a6ee84ce72dd613d5e6c406585211a064b6ef641c8a09a                          0.2s
+ => => extracting sha256:48bd2de548fc487bbcf51e8ae99969d4ac77e412c4fcec68bc529bca2ad304b3                          0.5s
+ => => extracting sha256:e69bcee2d3143195eac279932a0692697b7e3905bed8c737f1cc7f237899ea05                          0.0s
+ => => extracting sha256:284a2f2376093ba00b09f539e56047dc168703a78095640a178b8e0c5450f460                          0.2s
+ => [2/3] COPY app.py /                                                                                            1.4s
+ => [3/3] RUN pip install flask                                                                                    4.9s
+ => exporting to image                                                                                             0.2s
+ => => exporting layers                                                                                            0.2s
+ => => writing image sha256:0e24ba7d5abb273d3562ca199910db3f52fbe8bd56b9a91d538c66b62b8b214c                       0.0s
+ => => naming to docker.io/library/myapp                                                                           0.0s
+PS D:\elekt\Documents\Docker-Labs\Lab-2> docker run myapp
+/bin/sh: 1: Syntax error: end of file unexpected (expecting "}")
+PS D:\elekt\Documents\Docker-Labs\Lab-2> docker build -t myapp .
+[+] Building 0.8s (8/8) FINISHED
+ => [internal] load build definition from Dockerfile                                                               0.0s
+ => => transferring dockerfile: 124B                                                                               0.0s
+ => [internal] load .dockerignore                                                                                  0.0s
+ => => transferring context: 2B                                                                                    0.0s
+ => [internal] load metadata for docker.io/library/python:3                                                        0.7s
+ => [internal] load build context                                                                                  0.0s
+ => => transferring context: 27B                                                                                   0.0s
+ => [1/3] FROM docker.io/library/python:3@sha256:5329e75033c4446dc92d702cf8ebbeb63e549d9b83076a776f6753e10817fc3c  0.0s
+ => CACHED [2/3] COPY app.py /                                                                                     0.0s
+ => CACHED [3/3] RUN pip install flask                                                                             0.0s
+ => exporting to image                                                                                             0.0s
+ => => exporting layers                                                                                            0.0s
+ => => writing image sha256:6aefca9f9021f6839b258aafe24c6b84b3f695f1399201d5cd30d36528d3e20f                       0.0s
+ => => naming to docker.io/library/myapp                                                                           0.0s
+PS D:\elekt\Documents\Docker-Labs\Lab-2> docker run myapp
+Hello, World!
+PS D:\elekt\Documents\Docker-Labs\Lab-2>
+
+-----------------------------------------------------------------------------------------------------------------------
+
+PS D:\elekt\Documents\Docker-Labs\Lab-2> docker build -t myapp .
+[+] Building 12.2s (8/8) FINISHED
+ => [internal] load build definition from Dockerfile                                                               0.0s
+ => => transferring dockerfile: 139B                                                                               0.0s
+ => [internal] load .dockerignore                                                                                  0.0s
+ => => transferring context: 2B                                                                                    0.0s
+ => [internal] load metadata for docker.io/library/python:3                                                        0.7s
+ => [internal] load build context                                                                                  0.0s
+ => => transferring context: 57B                                                                                   0.0s
+ => [1/3] FROM docker.io/library/python:3@sha256:5329e75033c4446dc92d702cf8ebbeb63e549d9b83076a776f6753e10817fc3c  0.0s
+ => CACHED [2/3] COPY app.py lab.docx /                                                                            0.0s
+ => [3/3] RUN pip install python-docx                                                                             11.1s
+ => exporting to image                                                                                             0.3s
+ => => exporting layers                                                                                            0.3s
+ => => writing image sha256:4697aacdc4f1110f90d77d817a2ec18c74a8d91c051c1e709dc95f5b9c490d52                       0.0s
+ => => naming to docker.io/library/myapp                                                                           0.0s
+PS D:\elekt\Documents\Docker-Labs\Lab-2> docker run myapp
+Лабораторна робота №2. Створення Docker контейнера для запуску додатку.
+-------
+
+-------
+Мета: ознайомитися з Docker та створенням власних Docker контейнерів, написати Dockerfile для збирання контейнера з додатком, запустити додаток у Docker контейнері.
+-------
+
+-------
+Завдання
+-------
+
+-------
+Створіть у робочому репозиторії каталог Lab_02. Усі наступні завдання необхідно виконувати у цьому каталозі.
+-------
+Напишіть додаток, який буде запускатися з терміналу та виводити "Hello, World!" у консоль. Збережіть код у файлі з назвою "app.py".
+-------
+Створіть файл з назвою "Dockerfile". Додайте у файл наступний вміст:
+
+Цей Dockerfile означає, що ми будемо використовувати базовий образ Python версії 3, копіювати файл "app.py" в кореневу директорію контейнера, встановлювати бібліотеку Flask та запускати додаток командою "python ./app.py".
+-------
+Відкрийте термінал та перейдіть до кореневої директорії проекту. Введіть наступну команду для збірки контейнера:
+
+$> docker build -t myapp .
+
+-------
+Запустіть Docker контейнер, використовуючи наступну команду:
+
+$> docker run myapp
+
+-------
+Зупиніть та видаліть створений контейнер.
+-------
+На вибраній мові програмування напишіть програму, яка зчитує текст цієї лабораторної роботи із файлу і виводить його у термінал.
+-------
+Створіть Dockerfile для запуску цієї програми у контейнері.
+-------
+Зберіть та запустіть створений контейнер.
+-------
+ Закомітьте усі створені файли та відправте зміни на GitHub.
+-------
+
+-------
+PS D:\elekt\Documents\Docker-Labs\Lab-2>
