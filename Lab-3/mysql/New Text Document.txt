@@ -1,0 +1,17 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\elekt> docker run -d -p 3306:3306 --name=mysql -v data:/var/lib/mysql -e MYSQL_ROOT_HOST=% -e MYSQL_ROOT_PASSWORD=root_pass -e MYSQL_DATABASE=test_db mysql/mysql-server:latest
+8ba5411dc2e40f8367fc7fa21994e4de4ef0a270379cac7e190e958bc3bcd54d
+PS C:\Users\elekt> docker run -d --name myadmin --link mysql:db -e PMA_HOST=mysql -e PMA_USER=root -e PMA_PASSWORD=root_pass -p 8080:80 phpmyadmin/phpmyadmin:latest
+3eb30365b77fe9d6cce2463f24c3252bd8bc9ace0a6bc93aa9582893a45144b6
+PS C:\Users\elekt> docker exec -it mysql mysql/mysql-server:latest
+OCI runtime exec failed: exec failed: unable to start container process: exec: "mysql/mysql-server:latest": stat mysql/mysql-server:latest: no such file or directory: unknown
+PS C:\Users\elekt> docker exec -it mysql mysql -uroot -p
+Enter password:
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+PS C:\Users\elekt> docker run -d --name myadmin --link mysql:db -e PMA_HOST=mysql -p 8080:80 phpmyadmin/phpmyadmin:latest
+7f5009eb44b687dc567008e6366e61fa8d9da4c43d3402397caa25a7e77d65c3
+PS C:\Users\elekt>
