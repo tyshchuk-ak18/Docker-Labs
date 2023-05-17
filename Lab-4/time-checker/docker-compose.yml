@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  service_write:
+    build:
+      dockerfile: Dockerfile.create_file
+    volumes:
+      - ./data:/data
+
+  service_read:
+    build:
+      dockerfile: Dockerfile.read_file
+    volumes:
+      - ./data:/data

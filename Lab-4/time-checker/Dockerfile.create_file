@@ -1,0 +1,4 @@
+FROM python:3.9
+WORKDIR /app
+COPY app/create_file.py .
+CMD ["python", "create_file.py"]
